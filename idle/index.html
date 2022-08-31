@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<script>
+changelog001=[
+"\n*added log\n*added this litle thing\n\n\n\n*planed things: \n*store"
+]
+changelog002=[
+"*upgraded the 'get log'system\n\n",
+"planed things:\n",
+"*shop\n",
+"*save system"
+]
+alert("version: 0.0.2 \nchangelog :\n"+changelog002+"\nversion: 0.0.1: "+changelog001)
+
+    up=50
+    var spect=0;
+    var m=0;
+    var k=1;
+    var j=0;
+    var n=0;
+    var log=0;
+    var x=100;
+    var logy=1
+    var logx=10
+function g(){
+if (m<0.001){
+  m=0
+}
+    if(n<0.01){
+      n-=n
+    }
+    if (log < 0.01){
+      log=0
+    }
+    h=document.getElementById(1).innerHTML=m
+    h=document.getElementById(2).innerHTML=n
+    h=document.getElementById(3).innerHTML=log
+    h=document.getElementById(4).innerHTML=x
+    h=document.getElementById(5).innerHTML=j
+    h=document.getElementById(6).innerHTML=logy
+    h=document.getElementById(22).innerHTML=logx
+    h=document.getElementById("spec").innerHTML=spect
+}
+function devs(){
+v=document.getElementById("dev").value
+if(v=="team paradox"){
+  cheat=true;
+  j=999999999999999
+  }else{
+    alert("wrong")
+  }
+}
+function upgradeVal(){
+if(n>=up){
+  n-=up
+  spect+=50
+  logy+=up
+  j+=up
+  up+=50
+  g()
+  }
+}
+function more(){
+document.getElementById(22).style.color="lightblue"
+}
+shopon=[
+"<button onClick='upgradeVal()'>welp</button>",
+"<button onClick='more()'>none</button>"
+]
+function shopOn(){
+document.getElementById("shop").innerHTML=shopon
+}
+</script>
+<html lang="en">
+<style type="text/css" media="all">
+    button{
+        color: white;
+        background:black;
+    }
+    body{
+    zoom:1.5;
+    color: white;
+    background:black;
+    }
+    input{
+      color:white;
+    }
+</style>
+minerals:<div id="1">0</div>
+money:<div id="2">0</div>
+logs:<div id="3">0</div>
+current ore per click: <div id="5">1</div>
+current log per click: <div id="6">1</div>
+<button onclick="m+=j;g()">minera</button>
+<button onClick="n+=m;m-=n;n+=log;log-=n;g()">sell</button>
+<button onClick="log+=logy;g()">get wood</button>
+<button onClick="if(n>=x){j+=3;n-=x;x+=30;g()}"id="4">100</button>
+<button onClick="if(n>=logx){logx+=10;logy+=1;n-=logx;g()}"id="22">10</button>
+<input id="dev"></input>
+<button onClick="devs()"></button>
+</html>
+<button onClick="shopOn()">shop on</button>
+special:
+<p id="spec">0</p>
+<p id="shop" style="color:white;"></p>
+<button onClick="h=document.getElementById('shop').innerHTML=''">shop off</button>
+
+
+
+
+
+
+
